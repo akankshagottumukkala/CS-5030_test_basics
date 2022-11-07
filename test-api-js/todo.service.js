@@ -29,7 +29,7 @@ class todoservice{
       item,
       completed,
     };
-    todos.push(newTodo);
+    this.todos.todo.push(newTodo);
     return res.status(201).json({
       data: todos,
       error: null,
@@ -38,9 +38,9 @@ class todoservice{
 
     delete_todo(id){
         const id = req.params.id
-    const todo = todos[0]
+    const todo = todos.todo[0]
     if(todo) {
-      todos.splice(id, 1)
+      todos.todo.splice(id, 1)
     }
     return res.status(200).json({
       data: todos,
@@ -49,8 +49,9 @@ class todoservice{
     }
 
     update_todo(id, todo){
-        // Your code here
-    }
+        const { id, item, completed } = req.body;
+        const todoUpdate = todos.todo.find((todo) => todo.id == id);
+        todo.complete = true;
 }
 
 
