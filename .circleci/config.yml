@@ -15,7 +15,7 @@ jobs:
       - run:
           name: current directory
           command: pwd
-  build-and-test-javascript:
+   build-and-test-javascript:
      
      docker:
        - image: cimg/node:14.20.0
@@ -29,7 +29,7 @@ jobs:
            name: run tests
            command: cd test_javascript && npm run test
       
-      - run:
+       - run:
            name: install dependencies
            command: cd test-api-js && npm install
       
