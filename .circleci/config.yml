@@ -16,7 +16,6 @@ jobs:
           name: current directory
           command: pwd
    build-and-test-javascript:
-     
      docker:
        - image: cimg/node:14.20.0
      steps:
