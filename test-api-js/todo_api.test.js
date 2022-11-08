@@ -11,19 +11,16 @@ describe("todo api test suite", () => {
                     // .expect(res.body.todo.length).toEqual(3)
                     .end((err, res)=>{
                         if(err) return done(err);
-                        
                         return done();
                     })
     });
 
     test("POST/",(done)=>{
-        request(app).get("/addtodo")
+        request(app).post("/addtodo")
                     .expect('Content-Type', /json/)
                     .expect(200)
-                    // .expect(res.body.todo.length).toEqual(3)
                     .end((err, res)=>{
                         if(err) return done(err);
-                        
                         return done();
                     })
     });
@@ -42,7 +39,6 @@ describe("todo api test suite", () => {
                     .expect(200)
                     .end((err, res)=>{
                         if(err) return done(err);
-                        
                         return done();
                     })
     });
