@@ -10,12 +10,12 @@ jobs:
        - python/install-packages:
            pkg-manager: pip
        - run:
-           name: Run tests
-           command: pytest
+            name: Run tests
+            command: pytest
        - run:
-           name: current directory
-           command: pwd
-   build-and-test-javascript:
+            name: current directory
+            command: pwd
+  build-and-test-javascript:
     
      docker:
        - image: cimg/node:14.20.0
@@ -25,7 +25,7 @@ jobs:
            name: install dependencies
            command: cd test_javascript && npm install
       
-      - run:
+       - run:
           name: run tests
           command: cd test_javascript && npm run test
       
@@ -37,11 +37,11 @@ jobs:
            name: run tests
            command: cd test-api-js && npm run test
 workflows:
-   sample:
-     jobs:
-       - build-and-test-python:
-           filters:
-              branches:
-                only:
+  sample:
+    jobs:
+      - build-and-test-python:
+          filters:
+            branches:
+              only:
                   - master
-       - build-and-test-javascript
+      - build-and-test-javascript
