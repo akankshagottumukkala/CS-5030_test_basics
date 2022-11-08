@@ -29,22 +29,17 @@ describe("todo api test suite", () => {
     });
 
     test("PUT/",(done)=>{
-        request(app).get("/updatetodo")
-                    .expect('Content-Type', /json/)
+        request(app).put("/updatetodo")
                     .expect(200)
-                    // .expect(res.body.todo.length).toEqual(3)
                     .end((err, res)=>{
                         if(err) return done(err);
-                        
                         return done();
                     })
     });
 
     test("DELETE /",(done)=>{
-        request(app).get("/deletetodo")
-                    .expect('Content-Type', /json/)
+        request(app).delete("/deletetodo")
                     .expect(200)
-                    // .expect(res.body.todo.length).toEqual(3)
                     .end((err, res)=>{
                         if(err) return done(err);
                         
