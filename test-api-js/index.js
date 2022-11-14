@@ -11,10 +11,28 @@ app.get('/todolist', function (req, res) {
   res.json(todo_service.get_todos());
 })
 
-app.get('/todolist', function (req, res) {
+app.post('/todolist', function (req, res) {
   // console.log('API called with GET:' + req.url);
   let todo_service = new todoservice();
   res.json(todo_service.get_todos());
+  })
+
+  app.post('/addtodo', function (req, res) {
+    // console.log('API called with GET:' + req.url);
+    let todo_service = new todoservice();
+    res.json(todo_service.get_todos());
+  })
+
+  app.put('/updatetodo', function (req, res) {
+    // console.log('API called with GET:' + req.url);
+    let todo_service = new todoservice();
+    res.json(todo_service.get_todos());
+  })
+
+  app.delete('/deletetodo', function (req, res) {
+    // console.log('API called with GET:' + req.url);
+    let todo_service = new todoservice();
+    res.json(todo_service.get_todos());
   })
 
 
